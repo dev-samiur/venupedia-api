@@ -6,9 +6,7 @@ const app= express();
 const mongoose= require('mongoose');
 const cors = require('cors');
 
-app.use(cors({
-	origin: 'http://localhost:3000'
-}));
+app.use(cors());
 
 mongoose.connect(process.env.DATABASE_URL,{ useNewUrlParser: true, useUnifiedTopology: true });
 
