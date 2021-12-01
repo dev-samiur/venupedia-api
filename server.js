@@ -15,7 +15,7 @@ const db= mongoose.connection;
 db.on('error', error => console.log(error));
 db.once('open', () => console.log('Connected to database'));
 
-//require('./seeds/seed.js');
+// require('./seeds/seed.js');
 
 app.use(express.json());
 
