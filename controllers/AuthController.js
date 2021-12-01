@@ -32,3 +32,21 @@ exports.login= async (req,res) => {
 
     }    
 }
+
+exports.register= async (req, res) => {
+
+	const hashedPassword= await bcrypt.hash(req.body.password, 10)
+	
+	try{
+			await User.create({
+					username: req.body.username,
+					email: req.body.email,
+					password: hashedPassword,
+					role: req.body.role,
+					balance: req.body.balance,
+			})
+			res.json({success: 'User registration successful'})
+	} catch(err){
+			res.json({error: err})
+	}
+}
