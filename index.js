@@ -30,6 +30,9 @@ app.use('/api/venue', venueRoutes);
 const bookingRoutes= require('./routes/booking');
 app.use('/api/booking', bookingRoutes);
 
+const transactionRoutes= require('./routes/transaction');
+app.use('/api/transaction', transactionRoutes);
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => console.log('Serving...'));
