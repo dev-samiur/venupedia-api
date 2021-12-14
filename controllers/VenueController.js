@@ -1,5 +1,23 @@
 const Venue= require('../models/Venue')
 
+exports.getAll= async (req, res) => {
+	try{
+			let venues= await Venue.find()
+			res.json({success: venues});
+	} catch(err){
+			res.json({error: err.message});
+	}
+}
+
+exports.getById= async (req, res) => {
+	try{
+			let venue= await Venue.findById(req.params.id)
+			res.json({success: venue});
+	} catch(err){
+			res.json({error: err.message});
+	}
+}
+
 exports.create= async (req, res) => {
 
 	console.log(req.files)
