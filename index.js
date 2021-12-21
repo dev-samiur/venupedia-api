@@ -27,6 +27,9 @@ app.use('/api/auth', authRoutes);
 const venueRoutes= require('./routes/venue');
 app.use('/api/venue', venueRoutes);
 
+const slotRoutes= require('./routes/slot');
+app.use('/api/slot', slotRoutes);
+
 const bookingRoutes= require('./routes/booking');
 app.use('/api/booking', bookingRoutes);
 
