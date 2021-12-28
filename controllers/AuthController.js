@@ -20,8 +20,18 @@ exports.login = async (req, res) => {
       return res.json({ error: 'Invalid login details' });
     }
 
-    const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET);
-    res.json({ success: { token, userId: user._id, username: user.username, email: user.email } });
+    const token = jwt.sign(
+      { id: user._id, email: user.email },
+      process.env.JWT_SECRET
+    );
+    res.json({
+      success: {
+        token,
+        userId: user._id,
+        username: user.username,
+        email: user.email,
+      },
+    });
   } catch (err) {
     res.json({ error: err });
   }
