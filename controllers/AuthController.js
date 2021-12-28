@@ -20,8 +20,8 @@ exports.login = async (req, res) => {
       return res.json({ error: 'Invalid login details' });
     }
 
-    const token = jwt.sign({ id: user._id, email: user.email }, 'secret');
-    res.json({ success: { token, userId: user._id, email: user.email } });
+    const token = jwt.sign({ id: user._id, email: user.email }, process.env.JWT_SECRET);
+    res.json({ success: { token, userId: user._id, username: user.username, email: user.email } });
   } catch (err) {
     res.json({ error: err });
   }
@@ -34,8 +34,7 @@ exports.register = async (req, res) => {
       username: req.body.username,
       email: req.body.email,
       password: hashedPassword,
-      role: req.body.role,
-      balance: req.body.balance,
+      type: req.body.type,
     });
     res.json({ success: 'User registration successful' });
   } catch (err) {
