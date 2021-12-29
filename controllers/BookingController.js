@@ -19,9 +19,9 @@ const getSchedule = async (bookings) => {
       const user = await User.findById(booking.user_id);
       const venue = await Venue.findById(booking.venue_id);
       return {
-        venue: venue.title,
-        user: user.email,
-        date: booking.date,
+        venue: venue?.title,
+        user: user?.email,
+        date: booking?.date,
       };
     })
   );

@@ -21,15 +21,19 @@ const venueSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  owner: {
+    type: String,
+    required: true,
+  },
   thumbnail: {
     type: String,
     required: true,
   },
-	gallery_1: {
+  gallery_1: {
     type: String,
     required: true,
   },
-	gallery_2: {
+  gallery_2: {
     type: String,
     required: true,
   },
