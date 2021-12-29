@@ -28,7 +28,6 @@ exports.getByOwner = async (req, res) => {
 };
 
 exports.create = async (req, res) => {
-  console.log(req.files);
 
   const venue = new Venue({
     title: req.body.title,
