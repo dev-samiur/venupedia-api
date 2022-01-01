@@ -3,7 +3,7 @@ VenueQ is the ultimate online platform for next generation event execution!
 
 ## Features
 -  ▲ Based on [Express.js](https://expressjs.com/)
-- 🐐 Unit testing with [Jest](https://github.com/facebook/jest) & [react-testing-library](https://github.com/testing-library/react-testing-library)
+- 🐐 Unit testing with [Jest](https://github.com/facebook/jest) & [cypress](https://www.cypress.io/)
 
 ## Getting started
 ```
